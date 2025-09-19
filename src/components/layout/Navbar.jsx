@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Code, User, Briefcase, MessageCircle, Award } from 'lucide-react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../ui/ThemeToggle';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

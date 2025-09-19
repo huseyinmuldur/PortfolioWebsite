@@ -47,9 +47,9 @@ const Hero = () => {
   };
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
-    { icon: Linkedin, href: '#', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:huseyin@example.com', label: 'E-posta' },
+    { icon: Github, href: 'https://github.com/huseyinmuldur', label: 'GitHub' },
+    { icon: Linkedin, href: 'https://linkedin.com/in/hüseyin-müldür-b34620238', label: 'LinkedIn' },
+    { icon: Mail, href: 'mailto:huseyinmuldur@gmail.com', label: 'E-posta' },
   ];
 
   const mainText = "Merhaba, Ben Hüseyin Müldür";
@@ -100,36 +100,38 @@ const Hero = () => {
         >
           {/* Main Heading */}
           <div className="space-y-4">
-            <motion.h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight">
-              {"Merhaba, Ben ".split('').map((char, i) => (
-                <motion.span
-                  key={i}
-                  custom={i}
-                  variants={letterVariants}
-                  initial="hidden"
-                  animate="visible"
-                  className={char === ' ' ? 'inline-block w-4' : 'inline-block'}
-                  style={{
-                    color: 'var(--foreground)'
-                  }}
-                >
-                  {char === ' ' ? '\u00A0' : char}
-                </motion.span>
-              ))}
-              <span className="whitespace-nowrap">
-                {"Hüseyin Müldür".split('').map((char, i) => (
+            <motion.h1 className="text-5xl md:text-7xl lg:text-8xl font-bold leading-tight break-words">
+              <span className="inline-block">
+                {"Merhaba, Ben ".split(' ').map((word, wordIndex) => (
                   <motion.span
-                    key={`name-${i}`}
-                    custom={13 + i}
+                    key={wordIndex}
+                    custom={wordIndex}
                     variants={letterVariants}
                     initial="hidden"
                     animate="visible"
-                    className={char === ' ' ? 'inline-block w-4' : 'inline-block'}
+                    className="inline-block mr-2"
+                    style={{
+                      color: 'var(--foreground)'
+                    }}
+                  >
+                    {word}
+                  </motion.span>
+                ))}
+              </span>
+              <span className="inline-block whitespace-nowrap">
+                {"Hüseyin Müldür".split(' ').map((word, wordIndex) => (
+                  <motion.span
+                    key={`name-${wordIndex}`}
+                    custom={2 + wordIndex}
+                    variants={letterVariants}
+                    initial="hidden"
+                    animate="visible"
+                    className="inline-block mr-2"
                     style={{
                       color: 'var(--accent)'
                     }}
                   >
-                    {char === ' ' ? '\u00A0' : char}
+                    {word}
                   </motion.span>
                 ))}
               </span>
@@ -142,16 +144,16 @@ const Hero = () => {
               transition={{ delay: 1.5, duration: 0.8 }}
               className="relative"
             >
-              <motion.p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-                {subText.split('').map((char, i) => (
+              <motion.p className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto leading-relaxed break-words">
+                {subText.split(' ').map((word, wordIndex) => (
                   <motion.span
-                    key={i}
+                    key={wordIndex}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: 2 + i * 0.03 }}
-                    className="inline-block"
+                    transition={{ delay: 2 + wordIndex * 0.1 }}
+                    className="inline-block mr-1"
                   >
-                    {char === ' ' ? '\u00A0' : char}
+                    {word}
                   </motion.span>
                 ))}
               </motion.p>

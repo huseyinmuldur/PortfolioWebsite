@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Code2, MessageSquare, Brain, Coffee, Zap, Heart } from 'lucide-react';
-import profileImage from '../assets/profile.jpg';
+import profileImage from '../../assets/images/profile.jpg';
 
 const About = () => {
   const ref = useRef(null);

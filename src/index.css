@@ -1,0 +1,6 @@
+/* Base styles - this file is imported by main.jsx */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Additional global styles can be added here if needed */
